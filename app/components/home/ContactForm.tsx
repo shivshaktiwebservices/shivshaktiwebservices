@@ -308,6 +308,7 @@ export default function Contact() {
                           name="business"
                           type="text"
                           autoComplete="organization"
+                          required
                           placeholder="Your business name"
                           className={inputClass}
                         />
@@ -348,6 +349,7 @@ export default function Contact() {
                           name="phone"
                           type="tel"
                           autoComplete="tel"
+                          required
                           placeholder="+91 98765 43210"
                           className={inputClass}
                         />
@@ -406,7 +408,7 @@ export default function Contact() {
                       disabled={isSubmitting}
                       className="group/submit flex w-full items-center justify-center gap-3 rounded-xl bg-[var(--foreground)] px-5 py-4 text-[12px] font-bold text-[var(--background)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_35px_rgba(0,0,0,0.15)] disabled:cursor-not-allowed disabled:opacity-60"
                     >
-                      {isSubmitting ? "Sending..." : "Submit Enquiry"}
+                      {isSubmitting ? "Redirecting to WhatsApp, please wait..." : "Submit Enquiry"}
 
                       <ArrowUpRight
                         size={16}

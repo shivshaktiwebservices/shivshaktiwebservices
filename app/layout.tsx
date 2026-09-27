@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ShivShakti Web Services",
     description: "Professional websites, digital solutions, AI integration and business growth solutions.",
-    url: "https://shivshaktiwebservices.com",
+    url: "https://shivshaktiwebservice.co.in",
     siteName: "ShivShakti Web Services",
     locale: "en_US",
     type: "website",
