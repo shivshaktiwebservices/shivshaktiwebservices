@@ -98,22 +98,13 @@ export default function Contact() {
         }),
       });
 
-      const result = await response.json();
-
       if (!response.ok) {
-        throw new Error(result.error || "Failed to send enquiry.");
+        console.warn("Backend email send failed, proceeding to WhatsApp.");
       }
-
-      window.location.href = whatsappUrl;
     } catch (error) {
       console.error("Submission error:", error);
-
-      alert(
-        error instanceof Error
-          ? error.message
-          : "Something went wrong. Please try again."
-      );
-
+    } finally {
+      window.location.href = whatsappUrl;
       setIsSubmitting(false);
     }
   };
