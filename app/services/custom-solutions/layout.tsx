@@ -1,11 +1,11 @@
-import { Metadata } from 'next'
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Custom Software & Portals | ShivShakti Web Services',
-  description: 'We build custom business platforms, internal tools, admin dashboards, and client portals tailored precisely to your workflow.',
-  keywords: ['custom software', 'business platforms', 'internal tools', 'admin dashboards', 'customer portals', 'workflow automation'],
-}
+  title: "Custom Web Applications & Business Solutions",
+  description: "Get custom platforms, dashboards, portals, integrations, and business workflows built around your specific requirements.",
+  alternates: { canonical: "/services/custom-solutions" },
+};
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+export default function CustomSolutionsLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return children;
 }

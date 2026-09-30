@@ -10,9 +10,9 @@ import Contact from "./components/home/ContactForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ShivShakti Web Services - Custom Web Development & Digital Growth",
-  description: "We help businesses grow online with professional websites, custom platforms, digital growth strategies, and AI automation. Based in Haridwar, India.",
-  keywords: ["web development company", "custom websites", "digital growth", "AI automation", "software development Haridwar", "SEO services", "e-commerce websites"],
+  title: "Web Development, Digital Growth & AI Automation in Haridwar",
+  description: "Get a professional business website, custom web application, digital growth strategy, or AI automation from ShivShakti Web Services in Haridwar, India.",
+  alternates: { canonical: "/" },
 };
 
 

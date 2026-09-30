@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://shivshaktiwebservice.co.in/sitemap.xml',
+    sitemap: 'https://shivshaktiweb.online/sitemap.xml',
   }
 }

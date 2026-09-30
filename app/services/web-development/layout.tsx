@@ -1,11 +1,11 @@
-import { Metadata } from 'next'
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Custom Web Development | ShivShakti Web Services',
-  description: 'Professional, custom-built business websites, e-commerce stores, and web applications designed to engage your audience and drive growth.',
-  keywords: ['web development', 'business websites', 'e-commerce development', 'landing pages', 'custom web applications', 'website redesign'],
-}
+  title: "Web Development Services in Haridwar",
+  description: "Professional business websites, e-commerce stores, landing pages, and web applications designed for businesses in Haridwar and across India.",
+  alternates: { canonical: "/services/web-development" },
+};
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+export default function WebDevelopmentLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return children;
 }

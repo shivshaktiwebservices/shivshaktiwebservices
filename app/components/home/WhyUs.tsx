@@ -140,14 +140,6 @@ export default function WhyUs() {
                       {reason.text}
                     </p>
 
-                    {/* BOTTOM ACCENT */}
-                    <div className="mt-6 flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full" style={{ background: reason.gradient }} />
-
-                      <span className="text-[8px] font-bold uppercase tracking-[0.16em] text-[var(--muted)]">
-                        ShivShakti Approach
-                      </span>
-                    </div>
                   </div>
                 </div>
               </div>

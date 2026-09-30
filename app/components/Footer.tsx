@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Mail, MapPin, MessageCircle } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
 const quickLinks = [
     { name: "Home", href: "/#home" },
@@ -116,7 +116,25 @@ export default function Footer() {
                                 </span>
                             </div>
 
-                            <a href="https://wa.me/YOUR_NUMBER" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 text-sm text-white/60 transition-colors duration-300 hover:text-white [data-theme='dark']&:text-black/60 [data-theme='dark']&:hover:text-black">
+                            <div className="space-y-3">
+                                <a href="tel:+919105642658" className="group flex items-center gap-3 text-sm text-white/60 transition-colors duration-300 hover:text-white [data-theme='dark']&:text-black/60 [data-theme='dark']&:hover:text-black">
+                                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 text-[var(--accent)] [data-theme='dark']&:border-black/10">
+                                        <Phone size={14} />
+                                    </span>
+
+                                    +91 9105642658
+                                </a>
+
+                                <a href="tel:+917302724292" className="group flex items-center gap-3 text-sm text-white/60 transition-colors duration-300 hover:text-white [data-theme='dark']&:text-black/60 [data-theme='dark']&:hover:text-black">
+                                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 text-[var(--accent)] [data-theme='dark']&:border-black/10">
+                                        <Phone size={14} />
+                                    </span>
+
+                                    +91 7302724292
+                                </a>
+                            </div>
+
+                            <a href="https://wa.me/917302724292" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 text-sm text-white/60 transition-colors duration-300 hover:text-white [data-theme='dark']&:text-black/60 [data-theme='dark']&:hover:text-black">
                                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 text-[var(--accent)] [data-theme='dark']&:border-black/10">
                                     <MessageCircle size={14} />
                                 </span>

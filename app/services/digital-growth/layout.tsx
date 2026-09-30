@@ -1,11 +1,11 @@
-import { Metadata } from 'next'
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Digital Growth & Marketing | ShivShakti Web Services',
-  description: 'Enhance your online visibility with our SEO, Google Business optimization, and digital marketing strategies tailored for long-term growth.',
-  keywords: ['digital marketing', 'SEO services', 'Google Business optimization', 'lead generation', 'social media presence', 'online visibility'],
-}
+  title: "Digital Growth & SEO Services in Haridwar",
+  description: "Improve your online presence, local visibility, SEO, lead generation, and digital marketing with ShivShakti Web Services.",
+  alternates: { canonical: "/services/digital-growth" },
+};
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+export default function DigitalGrowthLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return children;
 }

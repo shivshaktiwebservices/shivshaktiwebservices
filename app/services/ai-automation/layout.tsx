@@ -1,11 +1,11 @@
-import { Metadata } from 'next'
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'AI & Automation Solutions | ShivShakti Web Services',
-  description: 'Streamline your operations with AI integrations, custom chatbots, WhatsApp automation, and API solutions designed to save time.',
-  keywords: ['AI integration', 'chatbots', 'WhatsApp automation', 'business automation', 'API integration', 'AI-powered web features'],
-}
+  title: "AI Automation & Integration Services",
+  description: "Automate workflows, connect business tools, and add practical AI features with ShivShakti Web Services in Haridwar.",
+  alternates: { canonical: "/services/ai-automation" },
+};
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+export default function AIAutomationLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return children;
 }

@@ -2,10 +2,20 @@
 
 import { FormEvent, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Check, Mail, MessageCircle, Send } from "lucide-react";
+import {
+  ArrowUpRight,
+  Check,
+  Clock,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+  Send,
+} from "lucide-react";
 
 const WHATSAPP_NUMBER = "917302724292";
 const EMAIL_ADDRESS = "shivshaktiwebservices@gmail.com";
+const PHONE_NUMBERS = ["9105642658", "7302724292"];
 
 const services = [
   "Web Development",
@@ -45,6 +55,7 @@ const labelClass =
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionStatus, setSubmissionStatus] = useState<"idle" | "success" | "error">("idle");
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -61,27 +72,9 @@ export default function Contact() {
     const service = String(formData.get("service") || "");
     const message = String(formData.get("message") || "");
 
-    const whatsappMessage = [
-      "Hello ShivShakti Web Services,",
-      "",
-      "I would like to discuss a project.",
-      "",
-      `Name: ${name}`,
-      `Business: ${business || "Not provided"}`,
-      `Email: ${email}`,
-      `Phone: ${phone || "Not provided"}`,
-      `Service: ${service}`,
-      "",
-      "Project Details:",
-      message,
-    ].join("\n");
-
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-      whatsappMessage
-    )}`;
-
     try {
       setIsSubmitting(true);
+      setSubmissionStatus("idle");
 
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -99,12 +92,15 @@ export default function Contact() {
       });
 
       if (!response.ok) {
-        console.warn("Backend email send failed, proceeding to WhatsApp.");
+        throw new Error("Unable to send enquiry.");
       }
+
+      form.reset();
+      setSubmissionStatus("success");
     } catch (error) {
       console.error("Submission error:", error);
+      setSubmissionStatus("error");
     } finally {
-      window.location.href = whatsappUrl;
       setIsSubmitting(false);
     }
   };
@@ -188,6 +184,30 @@ export default function Contact() {
                     around your goals.
                   </p>
 
+                  <div className="mt-8 space-y-4 border-y border-[var(--foreground)]/15 py-6">
+                    <div className="flex items-start gap-3">
+                      <MapPin size={17} className="mt-0.5 shrink-0 text-[var(--accent)]" />
+                      <div>
+                        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--foreground)]">
+                          Office Location
+                        </p>
+                        <address className="mt-1 not-italic text-[11px] font-bold leading-5 text-[var(--muted)]">
+                          Near Mantra Apartment, Integrated Industrial Estate, Nehru Colony, BHEL Township, Salempur Mahdood, Haridwar, Uttarakhand 249403
+                        </address>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <Clock size={17} className="mt-0.5 shrink-0 text-[var(--accent)]" />
+                      <div>
+                        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--foreground)]">
+                          Office Hours
+                        </p>
+                        <p className="mt-1 text-[11px] leading-5 text-[var(--muted)]">10 AM – 6 PM</p>
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="mt-9 space-y-5">
                     {[
                       {
@@ -225,24 +245,37 @@ export default function Contact() {
                       Prefer to reach us directly?
                     </p>
 
-                    <div className="mt-4 flex flex-wrap gap-3">
-                      <a
-                        href={`mailto:${EMAIL_ADDRESS}`}
-                        className="inline-flex items-center gap-2 rounded-full border border-[var(--foreground)]/35 bg-[var(--background)] px-4 py-3 text-[11px] font-semibold text-[var(--foreground)] transition-all duration-300 hover:border-[var(--foreground)] hover:bg-[var(--surface)]"
-                      >
-                        <Mail size={14} />
-                        Email Us
-                      </a>
+                    <div className="mt-4 flex flex-col gap-3">
+                      {PHONE_NUMBERS.map((phoneNumber) => (
+                        <a
+                          key={phoneNumber}
+                          href={`tel:+91${phoneNumber}`}
+                          className="inline-flex w-fit items-center gap-2 text-[13px] font-semibold text-[var(--foreground)] transition-colors duration-300 hover:text-[var(--accent)]"
+                        >
+                          <Phone size={14} />
+                          +91 {phoneNumber}
+                        </a>
+                      ))}
 
-                      <a
-                        href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full border border-[var(--foreground)]/35 bg-[var(--background)] px-4 py-3 text-[11px] font-semibold text-[var(--foreground)] transition-all duration-300 hover:border-[var(--foreground)] hover:bg-[var(--surface)]"
-                      >
-                        <MessageCircle size={14} />
-                        WhatsApp
-                      </a>
+                      <div className="flex flex-wrap gap-3">
+                        <a
+                          href={`mailto:${EMAIL_ADDRESS}`}
+                          className="inline-flex items-center gap-2 rounded-full border border-[var(--foreground)]/35 bg-[var(--background)] px-4 py-3 text-[11px] font-semibold text-[var(--foreground)] transition-all duration-300 hover:border-[var(--foreground)] hover:bg-[var(--surface)]"
+                        >
+                          <Mail size={14} />
+                          Email Us
+                        </a>
+
+                        <a
+                          href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-full border border-[var(--foreground)]/35 bg-[var(--background)] px-4 py-3 text-[11px] font-semibold text-[var(--foreground)] transition-all duration-300 hover:border-[var(--foreground)] hover:bg-[var(--surface)]"
+                        >
+                          <MessageCircle size={14} />
+                          WhatsApp
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -397,9 +430,13 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="group/submit flex w-full items-center justify-center gap-3 rounded-xl bg-[var(--foreground)] px-5 py-4 text-[12px] font-bold text-[var(--background)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_35px_rgba(0,0,0,0.15)] disabled:cursor-not-allowed disabled:opacity-60"
+                      className="group/submit flex w-full cursor-pointer items-center justify-center gap-3 rounded-xl bg-[var(--foreground)] px-5 py-4 text-[12px] font-bold text-[var(--background)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_35px_rgba(0,0,0,0.15)] disabled:cursor-not-allowed disabled:opacity-60"
                     >
-                      {isSubmitting ? "Redirecting to WhatsApp, please wait..." : "Submit Enquiry"}
+                      {isSubmitting
+                        ? "Submitting..."
+                        : submissionStatus === "success"
+                          ? "Sent Successfully"
+                          : "Send Enquiry"}
 
                       <ArrowUpRight
                         size={16}
@@ -407,11 +444,49 @@ export default function Contact() {
                       />
                     </button>
 
-                    <p className="text-center text-[10px] leading-5 text-[var(--muted)]">
-                      Your enquiry will be sent to us by email and then opened
-                      in WhatsApp.
+                    {submissionStatus === "success" && (
+                      <p className="text-center text-[10px] font-semibold leading-5 text-green-600">
+                        Your enquiry has been sent successfully. We&apos;ll get back to you soon.
+                      </p>
+                    )}
+
+                    {submissionStatus === "error" && (
+                      <p className="text-center text-[10px] font-semibold leading-5 text-red-600">
+                        We couldn&apos;t send your enquiry. Please try again or contact us on WhatsApp.
+                      </p>
+                    )}
+
+                    {submissionStatus === "idle" && (
+                      <p className="text-center text-[10px] leading-5 text-[var(--muted)]">
+                        Your enquiry will be sent to us by email.
+                      </p>
+                    )}
+
+                    <p className="text-center text-[11px] font-semibold leading-5 text-[var(--accent)]">
+                      Please fill this contact form to get the information very
+                      fast.
                     </p>
                   </form>
+                </div>
+              </div>
+
+              <div className="border-t border-[var(--foreground)]/15 p-6 sm:p-9 lg:p-11 xl:p-12">
+                <div className="mb-5 flex items-center gap-3">
+                  <MapPin size={18} className="text-[var(--accent)]" />
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--accent)]">Visit Our Office</p>
+                    <p className="mt-1 text-[13px] font-semibold text-[var(--foreground)]">Shiv Shakti Multi Service, Haridwar</p>
+                  </div>
+                </div>
+
+                <div className="overflow-hidden rounded-2xl border border-[var(--foreground)]/15">
+                  <iframe
+                    title="Shiv Shakti Multi Service office location"
+                    src="https://www.google.com/maps?q=Shiv+Shakti+Multi+Service,+Plot+No.+1407,+Salempur+Mahdood,+Haridwar,+Uttarakhand+249403&output=embed"
+                    className="h-[300px] w-full border-0 sm:h-[360px]"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </div>
               </div>
             </div>

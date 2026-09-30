@@ -19,7 +19,7 @@ const navItems = [
 export default function Navbar() {
   const pathname = usePathname();
 
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
@@ -35,8 +35,8 @@ export default function Navbar() {
       document.documentElement.setAttribute("data-theme", "light");
       setDark(false);
     } else {
-      document.documentElement.setAttribute("data-theme", "dark");
-      setDark(true);
+      document.documentElement.setAttribute("data-theme", "light");
+      setDark(false);
     }
   }, []);
 

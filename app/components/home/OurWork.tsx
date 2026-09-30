@@ -16,20 +16,17 @@ const projects = [
     title: "LuggageFree",
     category: "Logistics Platform",
     description: "A digital platform designed around convenient luggage delivery and logistics.",
-    url: "https://luggagefree.vercel.app/",
   },
   {
     number: "03",
-    title: "Desire Tour & Travels",
+    title: "Devine Tour & Travels",
     category: "Travel Website",
     description: "A modern travel experience for discovering destinations, tours and customized journeys.",
-    url: "https://desire-journeys.vercel.app/",
+    
   },
 ];
 
 const additionalWork = [
-  "Trainify",
-  "Zivro",
   "Business Websites",
   "E-Commerce",
   "Landing Pages",
@@ -117,6 +114,10 @@ export default function OurWork() {
             </motion.a>
           ))}
         </div>
+
+        <p className="mt-5 text-center text-[10px] leading-5 text-[var(--muted)] sm:text-[11px]">
+          Project links are provided for demonstration purposes only and are subject to the consent of their respective owners.
+        </p>
 
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewport} transition={{ duration: 0.6 }} className="mt-12">
           <div className="mb-5 flex items-center justify-between gap-4">

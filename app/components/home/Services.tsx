@@ -8,7 +8,7 @@ import { ArrowUpRight, Code2, TrendingUp, Sparkles, Layers3 } from "lucide-react
 const services = [
   {
     number: "01",
-    title: "Web Development",
+    title: "Website Development",
     description: "Websites and web apps made for your brand, customers and business goals.",
     items: ["Business Websites", "Company Websites", "Online Stores", "Web Apps", "Dashboards", "Booking Systems"],
     href: "/services/web-development",
