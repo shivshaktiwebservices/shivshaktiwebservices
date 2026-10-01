@@ -13,16 +13,24 @@ const projects = [
   },
   {
     number: "02",
-    title: "LuggageFree",
-    category: "Logistics Platform",
-    description: "A digital platform designed around convenient luggage delivery and logistics.",
+    title: "Palmo Coconut Water",
+    category: "Brand Website",
+    description: "A digital presence for a premium coconut water brand.",
+    url: "https://www.palmo.co.in/",
   },
   {
     number: "03",
-    title: "Devine Tour & Travels",
-    category: "Travel Website",
-    description: "A modern travel experience for discovering destinations, tours and customized journeys.",
-    
+    title: "LuggageFree",
+    category: "Logistics Platform",
+    description: "A digital platform designed around convenient luggage delivery and logistics.",
+    url: "https://luggagefree-client.vercel.app/",
+  },
+  {
+    number: "04",
+    title: "Om Manufacturing Company",
+    category: "Sanitary Products",
+    description: "A digital showcase for building and sanitary products.",
+    url: "https://om-manufacturing.vercel.app/",
   },
 ];
 
@@ -66,8 +74,8 @@ export default function OurWork() {
             </div>
 
             <h2 className="max-w-[680px] text-[36px] font-extrabold leading-[1.02] tracking-[-0.055em] text-[var(--foreground)] sm:text-[46px] lg:text-[54px]">
-              A few things
-              <span className="block text-[var(--muted)]">we've built.</span>
+              A Small Showcase of
+              <span className="block text-[var(--muted)]">Our Work.</span>
             </h2>
           </motion.div>
 

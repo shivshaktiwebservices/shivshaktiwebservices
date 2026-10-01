@@ -20,11 +20,11 @@ const services = [
 
 export default function Footer() {
     return (
-        <footer className="bg-[#050505] px-5 pb-6 pt-16 text-white transition-colors duration-500 [data-theme='dark']&:bg-white [data-theme='dark']&:text-black sm:px-8 lg:px-12">
+        <footer className="bg-[#050505] px-5 pb-6 pt-10 text-white transition-colors duration-500 [data-theme='dark']&:bg-white [data-theme='dark']&:text-black sm:px-8 lg:px-12 lg:pt-16">
             <div className="mx-auto max-w-[1380px]">
 
                 {/* MAIN FOOTER */}
-                <div className="grid gap-12 border-b border-white/15 pb-12 [data-theme='dark']&:border-black/10 lg:grid-cols-[1.6fr_1fr_1.2fr_1fr]">
+                <div className="grid gap-8 border-b border-white/15 pb-8 [data-theme='dark']&:border-black/10 lg:grid-cols-[1.6fr_1fr_1.2fr_1fr] lg:gap-12 lg:pb-12">
 
                     {/* BRAND */}
                     <div className="max-w-md">
@@ -44,12 +44,12 @@ export default function Footer() {
                             </div>
                         </Link>
 
-                        <p className="mt-7 max-w-sm text-sm leading-7 text-white/55 [data-theme='dark']&:text-black/55">
+                        <p className="mt-5 max-w-sm text-sm leading-6 text-white/55 [data-theme='dark']&:text-black/55 lg:mt-7 lg:leading-7">
                             Professional websites, digital solutions, AI integration and
                             practical digital services built around modern businesses.
                         </p>
 
-                        <Link href="/#contact" className="group mt-7 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,255,255,0.12)] [data-theme='dark']&:bg-black [data-theme='dark']&:text-white">
+                        <Link href="/#contact" className="group mt-5 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,255,255,0.12)] [data-theme='dark']&:bg-black [data-theme='dark']&:text-white lg:mt-7">
                             Start a Project
                             <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                         </Link>
@@ -61,7 +61,7 @@ export default function Footer() {
                             Quick Links
                         </p>
 
-                        <div className="mt-6 flex flex-col gap-3.5">
+                        <div className="mt-4 flex flex-col gap-2.5 lg:mt-6 lg:gap-3.5">
                             {quickLinks.map((link) => (
                                 <Link key={link.name} href={link.href} className="group flex w-fit items-center gap-1 text-sm text-white/60 transition-colors duration-300 hover:text-white [data-theme='dark']&:text-black/60 [data-theme='dark']&:hover:text-black">
                                     {link.name}
@@ -77,7 +77,7 @@ export default function Footer() {
                             What We Do
                         </p>
 
-                        <div className="mt-6 flex flex-col gap-3.5">
+                        <div className="mt-4 flex flex-col gap-2.5 lg:mt-6 lg:gap-3.5">
                             {services.map((service) => (
                                 <Link key={service.name} href={service.href} className="group flex w-fit items-center gap-1 text-sm text-white/60 transition-colors duration-300 hover:text-white [data-theme='dark']&:text-black/60 [data-theme='dark']&:hover:text-black">
                                     {service.name}
@@ -93,7 +93,7 @@ export default function Footer() {
                             Connect With Us
                         </p>
 
-                        <div className="mt-6 space-y-5">
+                        <div className="mt-4 space-y-3.5 lg:mt-6 lg:space-y-5">
 
                             <a href="mailto:shivshaktiwebservices@gmail.com" className="group flex items-start gap-3 text-sm text-white/60 transition-colors duration-300 hover:text-white [data-theme='dark']&:text-black/60 [data-theme='dark']&:hover:text-black">
                                 <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 text-[var(--accent)] [data-theme='dark']&:border-black/10">

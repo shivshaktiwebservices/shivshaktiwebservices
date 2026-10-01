@@ -82,7 +82,7 @@ export default function HappyClients() {
           </motion.h2>
 
           <motion.p variants={cardVariants} className="mx-auto mt-5 max-w-[540px] text-[13px] leading-6 text-[var(--muted)]">
-            Helping businesses establish a stronger digital presence through modern websites and digital solutions.
+            We have partnered with more than 50+ businesses, helping them establish a stronger digital presence through modern websites and digital solutions. Here are a few of them.
           </motion.p>
         </motion.div>
 
