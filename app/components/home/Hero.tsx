@@ -48,12 +48,12 @@ export default function Hero() {
 
       {/* BACKGROUND */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[8%] top-[20%] h-[300px] w-[300px] rounded-full bg-[var(--accent)] opacity-[0.04] blur-[140px]" />
-        <div className="absolute bottom-[5%] right-[8%] h-[260px] w-[260px] rounded-full bg-[var(--accent)] opacity-[0.035] blur-[130px]" />
+        <div className="absolute left-[8%] top-[20%] h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 opacity-[0.04]" style={{ background: 'radial-gradient(circle, var(--accent) 0%, transparent 70%)' }} />
+        <div className="absolute bottom-[5%] right-[8%] h-[500px] w-[500px] translate-x-1/2 translate-y-1/2 opacity-[0.035]" style={{ background: 'radial-gradient(circle, var(--accent) 0%, transparent 70%)' }} />
       </div>
 
       <div className="relative mx-auto max-w-[1240px]">
-        <div className="grid items-center gap-10 lg:min-h-[calc(100vh-150px)] lg:grid-cols-[1.08fr_0.92fr] lg:gap-10 xl:gap-16">
+        <div className="grid items-center gap-10 md:min-h-[calc(100vh-150px)] md:grid-cols-[1.08fr_0.92fr] md:gap-10 xl:gap-16">
 
           {/* LEFT CONTENT */}
           <motion.div initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: "easeOut" }} className="relative z-10">
@@ -68,7 +68,7 @@ export default function Hero() {
             </div>
 
             {/* HEADING */}
-            <h1 className="max-w-[700px] text-[41px] font-extrabold leading-[1.02] tracking-[-0.055em] text-[var(--foreground)] sm:text-[52px] md:text-[60px] lg:text-[58px] xl:text-[68px]">
+            <h1 className="max-w-[700px] text-[36px] font-extrabold leading-[1.05] tracking-[-0.055em] text-[var(--foreground)] sm:text-[42px] md:text-[46px] lg:text-[58px] xl:text-[68px]">
               We build digital
               <span className="block">experiences that</span>
               <span className="relative inline-block text-[var(--accent)]">
@@ -123,7 +123,7 @@ export default function Hero() {
           <motion.div initial={{ opacity: 0, x: 25, scale: 0.98 }} animate={{ opacity: 1, x: 0, scale: 1 }} transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }} className="relative mx-auto w-full max-w-[450px]">
 
             {/* IMAGE GLOW */}
-            <div className="pointer-events-none absolute -inset-7 rounded-full bg-[var(--accent)] opacity-[0.045] blur-[70px]" />
+            <div className="pointer-events-none absolute -inset-10 opacity-[0.045]" style={{ background: 'radial-gradient(circle, var(--accent) 0%, transparent 70%)' }} />
 
             {/* IMAGE CONTAINER */}
             <button type="button" onClick={nextImage} aria-label="Show next image" className="group relative block w-full cursor-pointer overflow-hidden rounded-[26px] border border-[var(--border)] bg-[var(--surface)] p-2 shadow-[0_25px_65px_rgba(0,0,0,0.13)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] sm:rounded-[30px]">
@@ -132,7 +132,7 @@ export default function Hero() {
 
                 <AnimatePresence mode="wait">
                   <motion.div key={activeImage} initial={{ opacity: 0, scale: 1.035 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.985 }} transition={{ duration: 0.7, ease: "easeInOut" }} className="absolute inset-0">
-                    <Image src={heroImages[activeImage].src} alt={heroImages[activeImage].alt} fill priority={activeImage === 0} sizes="(max-width: 640px) 92vw, (max-width: 1024px) 70vw, 450px" className="object-cover transition-transform duration-700 group-hover:scale-[1.015]" />
+                    <Image src={heroImages[activeImage].src} alt={heroImages[activeImage].alt} fill priority={true} sizes="(max-width: 640px) 92vw, (max-width: 1024px) 50vw, 450px" className="object-cover transition-transform duration-700 group-hover:scale-[1.015]" />
                   </motion.div>
                 </AnimatePresence>
 
