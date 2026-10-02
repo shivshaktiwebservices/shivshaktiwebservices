@@ -56,7 +56,7 @@ export default function Hero() {
         <div className="grid items-center gap-10 md:min-h-[calc(100vh-150px)] md:grid-cols-[1.08fr_0.92fr] md:gap-10 xl:gap-16">
 
           {/* LEFT CONTENT */}
-          <motion.div initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: "easeOut" }} className="relative z-10">
+          <motion.div initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: "easeOut" }} className="relative z-10 flex flex-col items-center text-center md:items-start md:text-left">
 
             {/* BRAND LABEL */}
             <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2 text-[10px] font-bold uppercase tracking-[0.15em] text-[var(--muted)] shadow-sm sm:mb-7 sm:text-[11px]">
@@ -68,7 +68,7 @@ export default function Hero() {
             </div>
 
             {/* HEADING */}
-            <h1 className="max-w-[700px] text-[36px] font-extrabold leading-[1.05] tracking-[-0.055em] text-[var(--foreground)] sm:text-[42px] md:text-[46px] lg:text-[58px] xl:text-[68px]">
+            <h1 className="mx-auto max-w-[700px] text-[36px] font-extrabold leading-[1.05] tracking-[-0.055em] text-[var(--foreground)] sm:text-[42px] md:mx-0 md:text-[46px] lg:text-[58px] xl:text-[68px]">
               We build digital
               <span className="block">experiences that</span>
               <span className="relative inline-block text-[var(--accent)]">
@@ -77,25 +77,25 @@ export default function Hero() {
             </h1>
 
             {/* DESCRIPTION */}
-            <p className="mt-6 max-w-[560px] text-[14px] font-medium leading-6 tracking-[-0.01em] text-[var(--muted)] sm:mt-7 sm:text-[15px] sm:leading-7">
+            <p className="mx-auto mt-6 max-w-[560px] text-[14px] font-medium leading-6 tracking-[-0.01em] text-[var(--muted)] sm:mt-7 sm:text-[15px] sm:leading-7 md:mx-0">
               Websites, web applications, AI integrations and digital solutions designed around your business.
             </p>
 
             {/* BUTTONS */}
-            <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center">
-              <Link href="#contact" className="group inline-flex items-center justify-center gap-2 rounded-full bg-[var(--foreground)] px-6 py-3.5 text-sm font-bold text-[var(--background)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl">
+            <div className="mt-7 flex w-full flex-col gap-3 sm:mt-8 sm:w-auto sm:flex-row sm:items-center sm:justify-center md:justify-start">
+              <Link href="#contact" className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--foreground)] px-6 py-3.5 text-sm font-bold text-[var(--background)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl sm:w-auto">
                 Start a Project
                 <ArrowUpRight size={16} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
 
-              <Link href="#work" className="group inline-flex items-center justify-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-6 py-3.5 text-sm font-semibold text-[var(--foreground)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--foreground)]">
+              <Link href="#work" className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-6 py-3.5 text-sm font-semibold text-[var(--foreground)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--foreground)] sm:w-auto">
                 Explore Our Work
                 <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
 
             {/* TRUST POINTS */}
-            <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-[var(--border)] pt-5 sm:mt-9 sm:gap-x-7 sm:pt-6">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-3 border-t border-[var(--border)] pt-5 sm:mt-9 sm:gap-x-7 sm:pt-6 md:justify-start">
               <div className="flex items-center gap-2 text-[11px] font-semibold text-[var(--muted)]">
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--surface)]">
                   <Check size={10} />
