@@ -32,10 +32,6 @@ export const metadata: Metadata = {
     title: "ShivShakti Web Services | Web Development & Digital Growth",
     description: "Professional websites, custom digital solutions, AI integration, and business growth support from Haridwar.",
   },
-  icons: {
-    icon: "/web-app-manifest-192x192.png",
-    apple: "/apple-icon.png",
-  },
   manifest: "/manifest.json",
 };
 
