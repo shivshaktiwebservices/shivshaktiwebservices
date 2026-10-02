@@ -44,7 +44,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className={`${plusJakarta.variable} relative min-h-screen overflow-hidden bg-[var(--background)] px-4 pb-12 pt-28 font-[family-name:var(--font-plus-jakarta)] sm:px-6 sm:pt-32 lg:px-8 lg:pb-16 lg:pt-36`}>
+    <section id="home" className={`${plusJakarta.variable} relative min-h-screen overflow-hidden bg-[var(--background)] px-4 pb-12 pt-36 font-[family-name:var(--font-plus-jakarta)] sm:px-6 sm:pt-40 md:pt-44 lg:px-8 lg:pb-16 lg:pt-48`}>
 
       {/* BACKGROUND */}
       <div className="pointer-events-none absolute inset-0">
